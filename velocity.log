@@ -1,0 +1,35 @@
+Wed Apr 19 17:15:08 CST 2017  [debug] AvalonLogSystem initialized using logfile 'velocity.log'
+Wed Apr 19 17:15:08 CST 2017   [info] ************************************************************** 
+Wed Apr 19 17:15:08 CST 2017   [info] Starting Jakarta Velocity v1.4
+Wed Apr 19 17:15:08 CST 2017   [info] RuntimeInstance initializing.
+Wed Apr 19 17:15:08 CST 2017   [info] Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+Wed Apr 19 17:15:08 CST 2017   [info] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogSystem
+Wed Apr 19 17:15:08 CST 2017   [info] Using logger class org.apache.velocity.runtime.log.AvalonLogSystem
+Wed Apr 19 17:15:08 CST 2017   [info] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+Wed Apr 19 17:15:08 CST 2017   [info] Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Wed Apr 19 17:15:08 CST 2017   [info] ClasspathResourceLoader : initialization starting.
+Wed Apr 19 17:15:08 CST 2017   [info] ClasspathResourceLoader : initialization complete.
+Wed Apr 19 17:15:08 CST 2017   [info] ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+Wed Apr 19 17:15:08 CST 2017   [info] Default ResourceManager initialization complete.
+Wed Apr 19 17:15:08 CST 2017   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+Wed Apr 19 17:15:08 CST 2017   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+Wed Apr 19 17:15:08 CST 2017   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+Wed Apr 19 17:15:08 CST 2017   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Include
+Wed Apr 19 17:15:08 CST 2017   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+Wed Apr 19 17:15:08 CST 2017   [info] Created: 20 parsers.
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : initialization starting.
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : adding VMs from VM library template : VM_global_library.vm
+Wed Apr 19 17:15:08 CST 2017  [error] ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro :  VM library template macro registration complete.
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : allowInline = true : VMs can be defined inline in templates
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : messages on  : VM system will output logging messages
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : autoload off  : VM system will not automatically reload global library macros
+Wed Apr 19 17:15:08 CST 2017   [info] Velocimacro : initialization complete.
+Wed Apr 19 17:15:08 CST 2017   [info] Velocity successfully started.
+Wed Apr 19 17:15:08 CST 2017   [info] ResourceManager : found com/ks/tests/overview.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Wed Apr 19 17:15:08 CST 2017   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = com/ks/tests/overview.vm [line 114,column 15] : $f.caseName is not a valid reference.
+Wed Apr 19 17:15:08 CST 2017   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = com/ks/tests/overview.vm [line 115,column 15] : $f.caseExpect is not a valid reference.
+Wed Apr 19 17:15:08 CST 2017   [warn] org.apache.velocity.runtime.exception.ReferenceException: reference : template = com/ks/tests/overview.vm [line 117,column 15] : $f.caseTester is not a valid reference.

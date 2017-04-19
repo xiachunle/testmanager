@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" pageEncoding="UTF-8 ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>测试用例报告</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"  pageEncoding="UTF-8"/>
+  <meta name="description" content="TestNG unit test results." />
+  <style type="text/css">
+  	table,table tr th, table tr td {
+     padding-bottom:20px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:20px;
+  	 border:2px solid #474747; }
+  	 
+  	table tr td{
+	border:2px solid#474747; 
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+	}
+  	table {
+  		text-align: center; border-collapse: collapse;size: 12px;
+  	}
+
+  	rolly{
+  		overflow-y: auto;height: 30%
+  	}
+  	
+ 	 tr th, table tr td{
+     padding-bottom:20px;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:20px;
+	border:1px solid #474747;
+  	}
+  </style>
+</head>
+<body >
+
+<h3 align="center" >
+ <script type="text/javascript">
+var d = new Date();
+document.write(d.getFullYear()+'年');
+document.write(d.getUTCMonth ()+1+'月');
+document.write(d.getDate()+'日');
+ </script>测试报告</h3>
+<br>
+<br>
+<table  style="margin-right: auto;margin-left: auto; width: 60%; ">
+  <tr>
+ 	 <th align="center" colspan="6" >执行情况总览</th>
+  </tr>
+  <tr >
+    <th>测试用例总数</th>
+    <th>成功用例数</th>
+    <th>失败用例数</th>
+    <th>未执行用例数</th>
+    <th>测试通过率</th>
+    <th>耗时(s)</th>
+  </tr>
+  
+  <tr>
+	<td>$overView.allTestsSize</td> 
+	<td>$overView.passedTestsSize</td> 
+	<td style="color: #CD1076">$overView.failedTestsSize</td> 
+	<td style="color: #6A5ACD">$overView.skippedTestsSize</td> 
+	<td>$overView.passPercent</td>
+	<td>$overView.testsTime</td>
+</tr>  
+</table>
+<br/><br/>
+<div class="rolly">
+<table style="margin-right: auto;margin-left: auto; width: 60%;">
+  <tr>
+  <th class="success" align="center" colspan="4">成功测试用例详细列表</th>
+  </tr>
+  <tr >
+    <th>用例编号</th>
+    <th>用例名称</th>
+    <th>预期结果</th>
+
+    <th>测试人员</th>
+  </tr>
+  #foreach( $p in $pass)
+  <tr>   
+	  <td>$p.caseId</td>
+	  <td>$p.caseName</td>  
+	  <td>$p.caseExpect</td> 
+	  <td>$p.caseTester</td>
+	  #end  
+</tr> 
+</table>
+</div>
+<br/>
+<br/>
+<div class="rolly">
+<table style="margin-right: auto;margin-left: auto; width: 60%;">
+  <tr>
+  <th align="center" colspan="5">失败测试用例详细列表</th>
+  </tr>
+  <tr >
+    <th>用例编号</th>
+    <th>用例名称</th>
+    <th>预期结果</th>
+    <th>异常原因</th>
+    <th>测试人员</th>
+  </tr>
+  #foreach( $f in $fail)
+  <tr>   
+	  <td>$f.caseId</td>
+	  <td>$f.caseName</td>  
+	  <td>$f.caseExpect</td> 
+	  <td>$f.throwable</td>
+	  <td>$f.caseTester</td>
+	  #end  
+</tr> 
+</table>
+</div>
+
+
+<br/><br/>
+
+<div class="rolly">
+<table style="margin-right: auto;margin-left: auto; width: 60%;">
+  <tr>
+  <th align="center" colspan="5">未执行的测试用例详细列表</th>
+  </tr>
+  <tr >
+    <th>用例编号</th>
+    <th>用例名称</th>
+    <th>预期结果</th>
+    <th>异常原因</th>
+    <th>测试人员</th>
+  </tr>
+  
+    <tr>
+
+  	#foreach( $s in $skip)
+	  <td>$s.caseId</td>
+	  <td>$s.caseName</td> 
+	  <td>$s.caseExpect</td>  
+	  <td>$s.throwable</td> 
+	  <td>$s.caseTester</td>
+	  #end 
+
+     </tr>
+</table>
+</div> 
+</body>
+</html>
