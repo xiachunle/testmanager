@@ -35,6 +35,10 @@
 		border-collapse: collapse;
 		size: 12px;
 	}
+.actionSpan {
+		text-align: center;
+	    float: left;
+	}
 </style>
 </head>
 <body>
@@ -48,9 +52,40 @@
 	<br/>
 	<br/>
 	<a href="caser" style="padding-left: 20%">增加测试用例</a>
+	<a href="appium" style="padding-left: 20px">启动Appium服务</a>
 	<a href="action" style="padding-left: 20px">执行用例</a>
 	<br/>
 	<br/>
+	<div class="actionSpan">POS机行为操作列表
+	<br/>
+	<br/>
+		<li>
+		<a href="">快速刷卡</a>	
+		</li>
+	 <br/>
+	 <br/>
+	  	<li>
+		<a href="">银行活动</a>
+		</li>
+	 <br/>
+	 <br/>
+	   	<li>
+		<a href="">商户储值</a>
+		</li>
+	 <br/>
+	 <br/>
+	   	<li>
+		<a href="">会员结账</a>
+		</li>
+	 <br/>
+	 <br/>
+	    	<li>
+		<a href="">交易撤销</a>
+		</li>
+	 <br/>
+	</div>
+	
+	
 	<c:if test="${empty requestScope.testcase}">
 		沒有测试用例请增加！
     </c:if>
