@@ -36,7 +36,18 @@
 	padding-top:20px;
 	border:1px solid #474747;
   	}
-  </style>
+  	
+ .mytable {
+ margin-right: auto;margin-left: auto; width: 70%;
+ 	
+ }
+ 
+.mytextarea{  	
+width:100%; height:100%; border-style:none; border-width:0px; overflow-y:visible; font-size:15px; 
+	
+
+}
+</style>
 </head>
 <body >
 
@@ -49,7 +60,7 @@ document.write(d.getDate()+'日');
  </script>测试报告</h3>
 <br>
 <br>
-<table  style="margin-right: auto;margin-left: auto; width: 60%; ">
+<table  class="mytable">
   <tr>
  	 <th align="center" colspan="6" >执行情况总览</th>
   </tr>
@@ -73,7 +84,7 @@ document.write(d.getDate()+'日');
 </table>
 <br/><br/>
 <div class="rolly">
-<table style="margin-right: auto;margin-left: auto; width: 60%;">
+<table class="mytable">
   <tr>
   <th class="success" align="center" colspan="4">成功测试用例详细列表</th>
   </tr>
@@ -97,7 +108,7 @@ document.write(d.getDate()+'日');
 <br/>
 <br/>
 <div class="rolly">
-<table style="margin-right: auto;margin-left: auto; width: 60%;">
+<table class="mytable">
   <tr>
   <th align="center" colspan="5">失败测试用例详细列表</th>
   </tr>
@@ -113,7 +124,7 @@ document.write(d.getDate()+'日');
 	  <td>$f.caseId</td>
 	  <td>$f.caseName</td>  
 	  <td>$f.caseExpect</td> 
-	  <td>$f.throwable</td>
+	  <td><textarea class="mytextarea">$f.throwable</textarea> </td>
 	  <td>$f.caseTester</td>
 	  #end  
 </tr> 
@@ -124,7 +135,7 @@ document.write(d.getDate()+'日');
 <br/><br/>
 
 <div class="rolly">
-<table style="margin-right: auto;margin-left: auto; width: 60%;">
+<table class="mytable">
   <tr>
   <th align="center" colspan="5">未执行的测试用例详细列表</th>
   </tr>
@@ -142,7 +153,7 @@ document.write(d.getDate()+'日');
 	  <td>$s.caseId</td>
 	  <td>$s.caseName</td> 
 	  <td>$s.caseExpect</td>  
-	  <td>$s.throwable</td> 
+	  <td><textarea class="mytextarea">$s.throwable</textarea></td> 
 	  <td>$s.caseTester</td>
 	  #end 
 

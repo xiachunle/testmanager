@@ -19,7 +19,7 @@ public class LoginController {
 		loginJSON.put("login_name",username);
 		loginJSON.put("password",password);
 		String result=httpUtils.doAuthPost("/auth/login", loginJSON.toString(), false);
-//		System.out.println(result);
+		System.out.println(result);
 		String response =JSON.parseObject(result).getString("code");
 		if(response.equals("200")){
 			return "/WEB-INF/views/systemlist.jsp";

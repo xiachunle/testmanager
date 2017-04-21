@@ -1,25 +1,23 @@
 package com.ks.tests.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.jboss.logging.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ks.tests.dao.CasesDao;
+import com.ks.tests.dao.ConfigDao;
+import com.ks.tests.entries.DeviceInfo;
 import com.ks.tests.entries.TestCases;
-import com.ks.tests.other.Book;
-import com.ks.tests.other.BookService;
-import com.ks.tests.other.Category;
 
 @Controller
 public class TestCasesController {
@@ -27,19 +25,20 @@ public class TestCasesController {
 
 	@Resource(name = "testcase")
 	private CasesDao casesDao;
+	@Resource(name = "config")
+	private ConfigDao configDao;
 
-	@Autowired
-	private BookService bookService;
-
-	@RequestMapping(value = "/casers")
-	public String list(Model model) {
-		System.out.println("Recevice  request to list ");
+	@RequestMapping(value = "/casers",method=RequestMethod.GET)
+	public String list(Map<String, Object> map) {
+		logger.debug("Recevice  request to list ");
 		List<TestCases> lists = casesDao.queryAll();
-		List<Category> categories = bookService.getAllCategories();
-		Book book=new Book();
-		model.addAttribute("categories", categories);
-		model.addAttribute("book", book);
-		model.addAttribute("testcase", lists);
+		List<DeviceInfo> deviceLists=configDao.getAllDeviceInfos();
+		List<String> snLists=new ArrayList<String>();
+		for (DeviceInfo deviceInfo : deviceLists) {
+			snLists.add(deviceInfo.getDeviceSn());
+		}
+		map.put("deviceInfo", snLists);
+		map.put("testcase", lists);
 		return "/WEB-INF/views/poslist.jsp";
 	}
 
@@ -53,7 +52,9 @@ public class TestCasesController {
 	@RequestMapping(value = "/caser", method = RequestMethod.POST)
 	public String save(TestCases caser) {
 		try {
+			logger.debug(caser.toString());
 			casesDao.addTest(caser);
+			
 		} catch (Exception e) {
 			return "redirect:/caser";
 		}

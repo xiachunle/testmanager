@@ -1,7 +1,5 @@
 package com.ks.tests.entries;
 
-import java.util.Comparator;
-
 public class TestCases  {
        private   int    caseId;
        private  String caseName;
@@ -11,8 +9,16 @@ public class TestCases  {
        private String caseActual;
        private String testResult;
        
-       
-    public TestCases() {
+       private String testDesc;
+    public String getTestDesc() {
+		return testDesc;
+	}
+
+	public void setTestDesc(String testDesc) {
+		this.testDesc = testDesc;
+	}
+
+	public TestCases() {
 
 	}
        
@@ -76,7 +82,8 @@ public class TestCases  {
 		return "caseId="+caseId+";caseName="+caseName+
 				";caseAction="+caseAction+";caseExpect="+caseExpect+
 				";caseActual="+caseActual+
-				";caseTester="+caseTester;
+				";caseTester="+caseTester+
+				";testDesc="+testDesc;
 	}
 
 

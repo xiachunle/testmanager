@@ -35,7 +35,16 @@ public class DataBean {
 
 	private String testTester;//测试执行人员
 	
+    private String testDesc;
 	
+	public String getTestDesc() {
+		return testDesc;
+	}
+
+	public void setTestDesc(String testDesc) {
+		this.testDesc = testDesc;
+	}
+
 	public int getExcludeTestsSize() {
 		return excludeTestsSize;
 	}

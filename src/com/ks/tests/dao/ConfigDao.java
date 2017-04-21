@@ -13,10 +13,14 @@ import javax.sql.DataSource;
 
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.ks.tests.entries.DeviceInfo;
+import com.ks.tests.entries.TestCases;
 
 
 
@@ -88,6 +92,12 @@ public class ConfigDao {
 				}
 		
 			});
+	}
+	
+	public List<DeviceInfo> getAllDeviceInfos(){
+		String sql="select * from deviceconfigs ";
+		List<DeviceInfo> list=jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(DeviceInfo.class));
+		return list;
 	}
 	
 }

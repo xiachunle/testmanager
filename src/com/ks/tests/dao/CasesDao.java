@@ -35,10 +35,10 @@ public class CasesDao {
 
 	// 增加测试用例
 	public void addTest(TestCases caser) {
-		String sql = "insert into testcases(caseId,caseName,caseAction,caseExpect,caseActual,caseTester,testResult)"
-				+ " values(?,?,?,?,?,?,?)";
+		String sql = "insert into testcases(caseId,caseName,caseAction,caseExpect,testDesc)"
+				+ " values(?,?,?,?,?)";
 		Object[] params = new Object[] { caser.getCaseId(),caser.getCaseName(),caser.getCaseAction(),
-				caser.getCaseExpect(),caser.getCaseActual(),caser.getCaseTester(),caser.getTestResult() };
+				caser.getCaseExpect(),caser.getTestDesc() };
 		jdbcTemplate.update(sql, params);
 	}
 
@@ -52,8 +52,8 @@ public class CasesDao {
 	// 修改测试用例
 	public void updateTest(TestCases casers) {
 		
-		String sql = "update  testcases set caseName=?,caseAction=?,caseExpect=?,caseTester=? where caseId=?";
-		Object[] params = new Object[] {casers.getCaseName(),casers.getCaseAction(),casers.getCaseExpect(),casers.getCaseTester(),casers.getCaseId()};
+		String sql = "update  testcases set caseName=?,caseAction=?,caseExpect=?,testDesc=? where caseId=?";
+		Object[] params = new Object[] {casers.getCaseName(),casers.getCaseAction(),casers.getCaseExpect(),casers.getTestDesc(),casers.getCaseId()};
 		jdbcTemplate.update(sql, params);
 	}
 	// 查找测试用例

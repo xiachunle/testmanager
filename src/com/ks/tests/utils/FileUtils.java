@@ -18,6 +18,7 @@ public class FileUtils {
 	 *            具体指令
 	 */
 	public void execCMD(String param) {
+		System.out.println("开始执行");
 		Runtime runtime = Runtime.getRuntime();
 		try {
 			runtime.exec("cmd /k  start " + param);
